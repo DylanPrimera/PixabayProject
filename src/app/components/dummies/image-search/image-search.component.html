@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div class="row">
+      <div class="col-lg-8">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="fa fa-magnifying-glass"></i></span>
+          </div>
+          <input class="form-control form-control-lg" type="text" name="word" formControlName="word" placeholder="Search an image">
+          <br>
+          <div class="input-group-append">
+            <select name="category" class="form-select form-select-lg" formControlName="category" id="category" (change)="submitForm()">
+              <option value="" disabled selected>Category</option>
+              <option *ngFor="let c of categories" [value]="c.value">{{c.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 searchBtn">
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Search</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+

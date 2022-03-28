@@ -1,0 +1,15 @@
+<div>
+  <app-navbar></app-navbar>
+  <div class="container mt-3">
+    <app-image-search></app-image-search>
+    <app-error-component></app-error-component>
+    <app-spinner-component *ngIf="showSpinner"></app-spinner-component>
+    <div class="row row-cols-1 row-cols-md-4 g-4">
+        <div class="col" *ngFor="let i of images">
+          <div class="card-deck mt-3 mb-3">
+            <app-images-card  [image]="i"></app-images-card>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
