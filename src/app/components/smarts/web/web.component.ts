@@ -61,7 +61,7 @@ export class WebComponent implements OnInit, OnDestroy {
     } else {
        setTimeout(() => {
         this.subscriptions.add(
-          this.api.getImages(this.searcWord, 20).subscribe((data) => {
+          this.api.getImages(this.searcWord, 20, this.category).subscribe((data) => {
             this.showSpinner = false;
             if (data.hits.length === 0) {
               this.api.setError('Sorry, image could not be found');
